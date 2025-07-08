@@ -5,8 +5,8 @@ import numpy as np
 from scipy.sparse import csr_matrix
 import pickle
 
-movies = pd.read_csv(r"dataset\movies.csv")
-ratings = pd.read_csv(r"dataset\ratings.csv")
+movies = pd.read_csv("dataset/movies.csv")
+ratings = pd.read_csv("dataset/ratings.csv")
 
 df = pd.merge(ratings, movies, on="movieId")
 user_movie_matrix = df.pivot_table(index='userId', columns='movieId', values='rating')
